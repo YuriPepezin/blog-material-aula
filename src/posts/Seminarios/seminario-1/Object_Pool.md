@@ -23,3 +23,33 @@ author: JoaoAugustoMPdJ, SalvadorCerqueiraJr
 [@SalvadorCerqueiraJr](https://github.com/SalvadorCerqueiraJr)
 
 <!-- @include: ../../../includes/seminario-1-SalvadorCerqueiraJr/README.md -->
+
+## Yuri Pêpe
+
+<figure>
+  
+
+```mermaid
+classDiagram
+    class Impressora {
+        - emUso: boolean
+        + conectar() void
+        + desconectar() void
+        + estaEmUso() boolean
+    }
+
+    class ObjectPool {
+        - pool: List<Impressora>
+        - tamanhoMaximo: int
+        + pegarImpressora() Impressora
+        + devolverImpressora(impressora: Impressora) void
+    }
+
+    class Cliente {
+        + main(args: String[]) void
+    }
+
+    ObjectPool o-- Impressora : "gerencia"
+    Cliente o-- ObjectPool : "usa"
+```
+</figure>
